@@ -1,0 +1,34 @@
+package condition_and_loop;
+
+public class biggest {
+
+	public static void main(String[] args) {
+		int []n= {4,6,2,3,7,9};
+		int m=n[0];
+		for(int i=1;i<n.length;i++) {
+			if(n[i]>m) {
+				m=n[i];
+			}
+		}
+		System.out.println("biggest value = "+m);
+	}
+}
+---------------------------------------------
+package condition_and_loop;
+
+public class Smallest {
+
+	public static void main(String[] args) {
+		int []n= {4,6,2,3,7,9};
+		int m=n[0];
+		for(int i=1;i<n.length;i++) {
+			if(n[i]<m) {
+				m=n[i];
+			}
+		}
+		System.out.println("smallest value = "+m);
+
+	}
+
+}
+

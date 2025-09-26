@@ -1,0 +1,72 @@
+package condition_and_loop;
+
+class Method_overriding {
+	
+	public void add(int a,int b){
+		int c;
+		c=a+b;
+		System.out.println("c="+c);
+	}
+	public void sub(int a,int b){
+		int c;
+		c=a+b;
+		System.out.println("c="+c);
+	}
+	public void mul(int a,int b){
+		int c;
+		c=a+b;
+		System.out.println("c="+c);
+	}
+	public void div(int a,int b){
+		int c;
+		c=a+b;
+		System.out.println("c="+c);
+	}
+}
+class mass extends Method_overriding {
+	@Override
+	public void add(int a,int b) {
+			int d;
+			d=a+b;
+		    System.out.println("d="+d);
+		}
+		@Override
+		public void sub(int a ,int b) {
+			int d;
+			d=a-b;
+			System.out.println("d="+d);
+		}
+	
+		@Override
+		public void mul(int a, int b) {
+			int d;
+			d=a*b;
+			System.out.println("d="+d);
+		}
+		@Override
+		public void div(int a,int b) {
+			int d;
+			if(b==0 && a==0) {
+				System.out.println("zero division error");
+			}
+			else{
+			d=a/b;
+			System.out.println("d="+d);
+			}
+		}
+}	
+
+
+
+
+  public class mainfun {
+	public static void main(String[] args) {
+		
+		mass ob=new mass();
+		ob.add(3,8);
+		ob.sub(14,7);
+		ob.mul(4,9);
+		ob.div(3,89);
+
+	}
+}

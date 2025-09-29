@@ -1,0 +1,24 @@
+package condition_and_loop;
+
+public class emp_constructor {
+	String emp_Name;
+	int emp_Age;
+	String emp_gender;
+	public  emp_constructor(String name,int age,String gender) {
+	 emp_Name=name;
+	 emp_Age=age;
+	 emp_gender=gender;
+	 System.out.println("Employee Name:"+name);
+	 System.out.println("Employee Age"+age);
+	 System.out.println("Employee Gender"+gender);
+	}
+	
+}
+class childconstructor extends emp_constructor{
+	public  childconstructor(String name,int age,String gender) {
+		super(name,age,gender);
+	}
+	public static void main(String[] args) {
+	childconstructor ob=new childconstructor("Ajay",24,"Male");
+	}
+}

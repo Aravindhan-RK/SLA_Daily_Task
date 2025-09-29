@@ -1,0 +1,32 @@
+package condition_and_loop;
+
+public class Shoppingclass {
+	private String items;
+	private int item_no;
+	private int Amount;
+	public void getmethod(String items,int num,int pay) {
+		this.items=items;
+		this.item_no=num;
+		this.Amount=pay;
+	}
+	public String setmethod(){
+		return this.items;
+	}
+	public int setmethod1() {
+		return this.item_no;
+	}
+	public int setmethod2() {
+		return this.Amount;
+	}
+	public static void main(String[] args) {
+		
+		Shoppingclass ob=new Shoppingclass();
+		ob.getmethod("1.pen 2.pencile 3.box",123,150);
+		String items=ob.setmethod();
+		int item_no=ob.setmethod1();
+		int pay=ob.setmethod2();
+		System.out.println("Shopped items:"+items);
+		System.out.println("Shopped item_number:"+item_no);
+		System.out.println("To Pay:"+pay);
+	}
+}

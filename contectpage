@@ -1,0 +1,29 @@
+package openingwebsite;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Accessing_web_browser {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		WebDriver drive = new ChromeDriver();
+		drive.get("https://webdriveruniversity.com/Contact-Us/contactus.html");
+		WebElement Firstname = drive.findElement(By.name("first_name"));
+		Firstname.sendKeys("James");
+		WebElement Lastname = drive.findElement(By.name("last_name"));
+		Lastname.sendKeys("Bond");
+		WebElement Email = drive.findElement(By.name("email"));
+		Email.sendKeys("jamesbond123@gmail.com");
+		WebElement Message = drive.findElement(By.name("message"));
+		Message.sendKeys("I need to Know about the course physiology");
+	    WebElement Submit = drive.findElement(By.xpath("(//input[@value = 'SUBMIT'])"));
+		Submit.click();
+//		WebElement Reset = drive.findElement(By.className("contact_button"));
+//		Reset.click();
+	}
+}

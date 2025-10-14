@@ -1,0 +1,20 @@
+package openingwebsite;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class Finding_the_links {
+		public static void main(String[] args) {
+			WebDriverManager.chromedriver().setup();
+			WebDriver link = new ChromeDriver();
+			link.get("https://academybugs.com/contact-us-form/");
+			List<WebElement> links = link.findElements(By.xpath("//a"));	
+			for(WebElement btn:links) {
+				System.out.println(btn.getAttribute("href"));
+			
+			}
+			
+		}	
+}

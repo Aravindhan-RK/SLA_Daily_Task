@@ -1,0 +1,25 @@
+package openingwebsite;
+
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class screenshort_task {
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		String url = "https://demo.automationtesting.in/Alerts.html";
+		String screenshort_url_path ="C:\\Users\\Hp\\eclipse-workspace\\Samplelogin\\ScreenShorts\\clickmgs.png";
+		WebDriver chrome = new ChromeDriver();
+		chrome.get(url);
+		WebElement user = chrome.findElement(By.xpath("//div//li//a[@href='#CancelTab']"));
+		user.click();
+		WebElement clickMsg = chrome.findElement(By.className("btn-primary"));
+		File src = clickMsg.getScreenshotAs(OutputType.FILE);
+		File dest = new File(screenshort_url_path );
+		FileUtils.copyFile(src, dest);
+	}
+}

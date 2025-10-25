@@ -1,0 +1,27 @@
+package Daily_Tasks;
+
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class imp_wite {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver browser = new ChromeDriver();
+		browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+		try {
+			browser.get("https://www.hyrtutorials.com/p/waits-demo.html");
+			browser.findElement(By.id("btn1")).click();
+			WebElement text = browser.findElement(By.id("txt1"));
+			text.sendKeys("hello");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			browser.quit();
+		}
+	}
+}

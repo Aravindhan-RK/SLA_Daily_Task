@@ -1,22 +1,22 @@
-package Daily_Tasks;
-
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public class imp_wite {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		WebDriver browser = new ChromeDriver();
-		browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+		browser.manage().window().maximize();
+		browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		try {
-			browser.get("https://www.hyrtutorials.com/p/waits-demo.html");
-			browser.findElement(By.id("btn1")).click();
-			WebElement text = browser.findElement(By.id("txt1"));
-			text.sendKeys("hello");
+			browser.get("https://cosmocode.io/automation-practice-handling-waits/");
+			browser.findElement(By.xpath("//a[text()='Click me to enable the below button']")).click();
+			browser.findElement(By.id("submit")).click();
+			System.out.println("hello");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -24,4 +24,5 @@ public class imp_wite {
 			browser.quit();
 		}
 	}
+
 }

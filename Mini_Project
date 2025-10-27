@@ -1,0 +1,43 @@
+package Daily_Tasks;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Mini_project {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String Url="https://practicetestautomation.com/practice-test-login/";
+		WebDriver Browser = new ChromeDriver();
+		Browser.manage().window().maximize();
+		Browser.get(Url);
+		WebElement User_Name = Browser.findElement(By.id("username"));
+		User_Name.sendKeys("student");
+		WebElement Password = Browser.findElement(By.id("password"));
+		Password.sendKeys("Password123");
+		Browser.findElement(By.id("submit")).click();
+		String logurl = Browser.getCurrentUrl();
+		if(logurl.equals("https://practicetestautomation.com/logged-in-successfully/")) {
+			
+		WebElement login = Browser.findElement(By.className("post-title"));
+		System.out.println(login.getText());
+		}
+		else {
+			System.out.println("Check Your username and Password");
+		}
+		Browser.findElement(By.xpath("//a[text()='Log out']")).click();
+		String logouts = Browser.getCurrentUrl();
+		if(Url.equals(logouts)) {
+		WebElement logout = Browser.findElement(By.xpath("//h2[text()='Test login']"));
+		System.out.println(logout.getText());
+		System.out.println("Current URL"+Browser.getCurrentUrl());
+		Browser.close();
+		}
+		else {
+			System.out.println("User not logouted");
+		}
+	}
+}
